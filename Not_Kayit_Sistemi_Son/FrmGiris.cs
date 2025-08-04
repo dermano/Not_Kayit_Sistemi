@@ -18,7 +18,7 @@ namespace Not_Kayit_Sistemi_Son
         }
         private void FrmGiris_Load(object sender, EventArgs e)
         {
-            maskedTextBox1.Focus();
+            
         }
         private void label1_Click(object sender, EventArgs e)
         {
@@ -42,6 +42,9 @@ namespace Not_Kayit_Sistemi_Son
             }
         }
 
-       
+        private void FrmGiris_Shown(object sender, EventArgs e)
+        {
+            maskedTextBox1.Focus();
+        }
     }
 }

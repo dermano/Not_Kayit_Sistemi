@@ -56,6 +56,7 @@ namespace Not_Kayit_Sistemi_Son
         {
             double ortalama, s1, s2, s3;
             string durum;
+            
             s1 = Convert.ToDouble(TxtSinav1.Text);
             s2 = Convert.ToDouble(TxtSinav2.Text);
             s3 = Convert.ToDouble(TxtSinav3.Text);
@@ -69,6 +70,7 @@ namespace Not_Kayit_Sistemi_Son
             {
                 durum = "False";
             }
+
                 baglanti.Open();
             SqlCommand komut = new SqlCommand("update TBLDERS set OGRS1=@p1,OGRS2=@p2,OGRS3=@p3,ORTALAMA=@p4,DURUM=@p5 WHERE OGRNUMARA=@p6", baglanti);
             komut.Parameters.AddWithValue("@p1", TxtSinav1.Text);
@@ -80,7 +82,30 @@ namespace Not_Kayit_Sistemi_Son
             komut.ExecuteNonQuery();
             baglanti.Close();
             MessageBox.Show("Öğrenci Notları Güncellendi");
+            
+            int gecensayisi = 0, kalansayisi = 0;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.IsNewRow) continue; // Boş satırı atla
+
+                // Eğer "DURUM" sütunu isimli bir sütunun varsa bu satırı kullan:
+                // bool durumDegeri = Convert.ToBoolean(row.Cells["DURUM"].Value);
+
+                // Eğer indeksle erişmek istiyorsan (örneğin 8. sütun DURUM ise)
+                bool durumDegeri = Convert.ToBoolean(row.Cells[8].Value);
+
+                if (durumDegeri)
+                    gecensayisi++;
+                else
+                    kalansayisi++;
+
+            // Label'lara yaz
+            LblGecenSayisi.Text = gecensayisi.ToString();
+            LblKalanSayisi.Text = kalansayisi.ToString();
             this.tBLDERSTableAdapter.Fill(this.dbNotKayitDataSet.TBLDERS);
+            }
+
+            
 
         }
     }

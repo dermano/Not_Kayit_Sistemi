@@ -35,6 +35,8 @@ namespace Not_Kayit_Sistemi_Son
                 LblSinav3.Text = dr[6].ToString();
                 LblOrtalama.Text = dr[7].ToString();
                 LblDurum.Text = dr[8].ToString();
+                bool durum = Convert.ToBoolean(dr[8]);
+                LblDurum.Text = durum ? "Geçti":"Kaldı";
             }
             baglanti.Close();
         }

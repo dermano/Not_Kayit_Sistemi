@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOgretmenDetay));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.TxtSoyad = new System.Windows.Forms.TextBox();
@@ -243,7 +244,7 @@
             // LblKalanSayisi
             // 
             this.LblKalanSayisi.AutoSize = true;
-            this.LblKalanSayisi.Location = new System.Drawing.Point(154, 111);
+            this.LblKalanSayisi.Location = new System.Drawing.Point(145, 111);
             this.LblKalanSayisi.Name = "LblKalanSayisi";
             this.LblKalanSayisi.Size = new System.Drawing.Size(28, 18);
             this.LblKalanSayisi.TabIndex = 5;
@@ -252,7 +253,7 @@
             // LblGecenSayisi
             // 
             this.LblGecenSayisi.AutoSize = true;
-            this.LblGecenSayisi.Location = new System.Drawing.Point(154, 76);
+            this.LblGecenSayisi.Location = new System.Drawing.Point(145, 76);
             this.LblGecenSayisi.Name = "LblGecenSayisi";
             this.LblGecenSayisi.Size = new System.Drawing.Size(28, 18);
             this.LblGecenSayisi.TabIndex = 4;
@@ -261,7 +262,7 @@
             // LblOrtalama
             // 
             this.LblOrtalama.AutoSize = true;
-            this.LblOrtalama.Location = new System.Drawing.Point(154, 45);
+            this.LblOrtalama.Location = new System.Drawing.Point(145, 45);
             this.LblOrtalama.Name = "LblOrtalama";
             this.LblOrtalama.Size = new System.Drawing.Size(28, 18);
             this.LblOrtalama.TabIndex = 3;
@@ -408,6 +409,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmOgretmenDetay";
             this.Text = "FrmOgretmenDetay";
